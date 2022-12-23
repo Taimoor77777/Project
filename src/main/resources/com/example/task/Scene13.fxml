@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="850.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task.HelloController">
+    <children>
+        <AnchorPane layoutY="-2.0" prefHeight="114.0" prefWidth="850.0" style="-fx-background-color: d5c1aa;">
+            <children>
+                <ImageView fitHeight="105.0" fitWidth="129.0" layoutX="365.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@every.jpeg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="112.0" prefHeight="637.0" prefWidth="850.0" style="-fx-background-color: white;">
+            <children>
+                <Text fill="#d5c1aa" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question: 1&#10;&#10;Cats only eat Meat.&#10;" textAlignment="JUSTIFY" wrappingWidth="146.51365712285042">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Text>
+                <CheckBox fx:id="myCheckBox10" layoutX="25.0" layoutY="112.0" mnemonicParsing="false" onAction="#change7" style="-fx-font-weight: bold;" text="True" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="myCheckBox11" layoutX="79.0" layoutY="112.0" mnemonicParsing="false" onAction="#change7" style="-fx-font-weight: bold;" text="False" textFill="#d5c1aa" />
+                <Label fx:id="myLabel10" layoutX="296.0" layoutY="17.0" prefHeight="145.0" prefWidth="546.0" style="-fx-font-weight: bold;" text=".&#10;" textAlignment="JUSTIFY" textFill="#d5c1aa" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fx:id="myImageView6" fitHeight="74.0" fitWidth="109.0" layoutX="207.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@s.jpeg" />
+                    </image>
+                </ImageView>
+                <Text fill="#d5c1aa" layoutX="9.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question: 2&#10;&#10;Cats hate getting wet.&#10;&#10;" wrappingWidth="190.83202949166298">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Text>
+                <CheckBox fx:id="myCheckBox12" layoutX="25.0" layoutY="248.0" mnemonicParsing="false" onAction="#change8" style="-fx-font-weight: bold;" text="True" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="myCheckBox13" layoutX="80.0" layoutY="247.0" mnemonicParsing="false" onAction="#change8" style="-fx-font-weight: bold;" text="False" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+                <ImageView fx:id="myImageView7" fitHeight="74.0" fitWidth="109.0" layoutX="207.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@s.jpeg" />
+                    </image>
+                </ImageView>
+                <Label fx:id="myLabel11" layoutX="296.0" layoutY="162.0" prefHeight="145.0" prefWidth="546.0" style="-fx-font-weight: bold;" text=".&#10;" textAlignment="JUSTIFY" textFill="#d5c1aa" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Text fill="#d5c1aa" layoutX="8.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question: 3&#10;&#10;Domestic cats spend 50% of their days sleeping.&#10;&#10;&#10;" textAlignment="JUSTIFY" wrappingWidth="190.83202949166298">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Text>
+                <CheckBox fx:id="myCheckBox15" layoutX="79.0" layoutY="399.0" mnemonicParsing="false" onAction="#change9" style="-fx-font-weight: bold;" text="False" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+                <ImageView fx:id="myImgView8" fitHeight="74.0" fitWidth="109.0" layoutX="214.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@s.jpeg" />
+                    </image>
+                </ImageView>
+                <Label fx:id="myLabel12" layoutX="296.0" layoutY="322.0" prefHeight="145.0" prefWidth="546.0" style="-fx-font-weight: bold;" text=".&#10;" textAlignment="JUSTIFY" textFill="#d5c1aa" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Text fill="#d5c1aa" layoutX="15.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question: 4&#10;&#10;Meowing is a language cats reserve for their humans.&#10;&#10;&#10;" textAlignment="JUSTIFY" wrappingWidth="176.41504630446434">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Text>
+                <CheckBox fx:id="myCheckBox17" layoutX="79.0" layoutY="561.0" mnemonicParsing="false" onAction="#change10" style="-fx-font-weight: bold;" text="False" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+                <ImageView fx:id="myImgView9" fitHeight="74.0" fitWidth="109.0" layoutX="214.0" layoutY="487.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@s.jpeg" />
+                    </image>
+                </ImageView>
+                <Label fx:id="myLabel13" layoutX="292.0" layoutY="477.0" prefHeight="155.0" prefWidth="554.0" style="-fx-font-weight: bold;" text=".&#10;" textAlignment="JUSTIFY" textFill="#d5c1aa" wrapText="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <CheckBox fx:id="myCheckBox14" layoutX="25.0" layoutY="399.0" mnemonicParsing="false" onAction="#change9" style="-fx-font-weight: bold;" text="True" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="myCheckBox16" layoutX="25.0" layoutY="561.0" mnemonicParsing="false" onAction="#change10" style="-fx-font-weight: bold;" text="True" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="750.0" prefHeight="105.0" prefWidth="850.0" style="-fx-background-color: d5c1aa;">
+            <children>
+                <Text fill="WHITE" layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="Can we Help You?" />
+                <Text fill="WHITE" layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="Contact Us:" underline="true" />
+                <Text fill="WHITE" layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="UAN: 03349920239" />
+                <Text fill="WHITE" layoutX="14.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="LittleMeow@outlook.com" />
+                <Text fill="WHITE" layoutX="558.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop Details:" underline="true">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="539.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="MON-FRI 9:00 TO 5:30 PST">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="539.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="DHA Phase 6, Lahore, Punjab">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+      <Button layoutX="37.0" layoutY="46.0" mnemonicParsing="false" onAction="#switchToScene12" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-border-style: 0px 0px 2px;" text="Go Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

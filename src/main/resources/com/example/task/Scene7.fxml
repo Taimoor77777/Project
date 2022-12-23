@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task.HelloController">
+    <children>
+        <AnchorPane layoutY="-2.0" prefHeight="114.0" prefWidth="812.0" style="-fx-background-color: d5c1aa;">
+            <children>
+                <ImageView fitHeight="105.0" fitWidth="129.0" layoutX="346.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@every.jpeg" />
+                    </image>
+                </ImageView>
+                <Button layoutX="35.0" layoutY="45.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-border-style: 0px 0px 2px;" text="Go Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="112.0" prefHeight="586.0" prefWidth="800.0" style="-fx-background-color: white;">
+            <children>
+                <AnchorPane layoutX="-1.0" layoutY="535.0" prefHeight="105.0" prefWidth="813.0" style="-fx-background-color: d5c1aa;">
+                    <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="Can we Help You?" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="Contact Us:" underline="true" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="UAN: 03349920239" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" text="LittleMeow@outlook.com" />
+                        <Text fill="WHITE" layoutX="514.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop Details:" underline="true">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="514.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="MON-FRI 9:00 TO 5:30 PST">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="512.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="DHA Phase 6, Lahore, Punjab">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <Text layoutX="21.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <ImageView fitHeight="262.0" fitWidth="240.0" layoutX="536.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@confused.jpg" />
+                    </image>
+                </ImageView>
+                <Hyperlink layoutX="544.0" layoutY="429.0" onAction="#switchToScene5" prefHeight="53.0" prefWidth="240.0" text="Still not what you are looking for? &#10;Tap here to see more options!" textFill="#d5c1aa">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Hyperlink>
+                <ImageView fitHeight="134.0" fitWidth="161.0" layoutX="29.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@33.jpeg" />
+                    </image>
+                </ImageView>
+                <Text fill="#d5c1aa" layoutX="29.0" layoutY="210.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details:&#10;&#10;Rs 12500&#10;&#10;Description:&#10;&#10;Persian Cat&#10;Punch face pure&#10;More than triple coated &#10;Age : 48 day &#10;Gender: Female &#10;Active and healthy &#10;Litter trained &#10;&#10;" wrappingWidth="169.99998092651367">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Text>
+                <Button fx:id="buybutton" layoutX="295.0" layoutY="424.0" mnemonicParsing="false" onAction="#buyaction" prefHeight="70.0" prefWidth="137.0" style="-fx-background-color: D5C1AA;" text="BUY!!!" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Button>
+                <Line endX="100.0" layoutX="122.0" layoutY="194.0" startX="-100.0" stroke="#d5c1aa" />
+                <Line endX="169.5" endY="-27.5" layoutX="53.0" layoutY="222.0" startX="169.0" startY="257.0" stroke="#d5c1aa">
+                    <rotationAxis>
+                        <Point3D x="4.0" y="4.0" z="4.0" />
+                    </rotationAxis>
+                </Line>
+                <Line endX="169.5" endY="-27.5" layoutX="-149.0" layoutY="221.0" startX="169.0" startY="257.0" stroke="#d5c1aa" />
+                <Line endX="100.0" layoutX="122.0" layoutY="478.0" startX="-100.0" stroke="#d5c1aa" />
+                <ImageView fx:id="myImageView5" fitHeight="135.0" fitWidth="143.0" layoutX="572.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@white.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="myImageView6" fitHeight="150.0" fitWidth="200.0" layoutX="363.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@white.jpg" />
+                    </image>
+                </ImageView>
+                <CheckBox fx:id="myCheckBox5" layoutX="241.0" layoutY="204.0" mnemonicParsing="false" onAction="#change5" style="-fx-font-weight: bold;" text="Check Here to see More photos!!" textFill="#d5c1aa">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </CheckBox>
+                <ImageView fx:id="myImageView7" fitHeight="150.0" fitWidth="200.0" layoutX="204.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@white.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
