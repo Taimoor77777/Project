@@ -7,6 +7,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -31,6 +32,52 @@ import javafx.stage.Stage;
 
 
 public class HelloController {
+
+    public static Connection connect() throws ClassNotFoundException, SQLException {
+        Connection con = null;
+        Class.forName("org.sqlite.JDBC");
+        con = DriverManager.getConnection("jdbc:sqlite:javaDatabase.db");
+        System.out.println("Connected!");
+        return con;
+    }
+    public static void insertData(String firstName, String password, String dateOfBirth, String email, String number) throws SQLException, ClassNotFoundException {
+        Connection con = connect();
+        PreparedStatement ps = null;
+        String sql = "INSERT INTO user(firstName, password, email, number, dateOfBirth) VALUES(?,?,?,?,?)";
+        ps = con.prepareStatement(sql);
+        ps.setString(1,firstName);
+        ps.setString(2,password);
+        ps.setString(3,email);
+        ps.setString(4,number);
+        ps.setString(5,dateOfBirth);
+        ps.execute();
+    }
+    public String[] readData(String email) throws SQLException, ClassNotFoundException {
+        Connection connection = connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String[] data = null;
+
+        String sql = "Select password, email from user where email = ?";
+        try{
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            String password = rs.getString("Password");
+            String Email = rs.getString("Email");
+            data = new String[]{Email, password};
+
+        }catch(SQLException ignored){
+
+        }
+        finally {
+            rs.close();
+            ps.close();
+            connection.close();
+        }
+
+        return data;
+    }
 
 
     HashMap<String, String[]> hashMap = new HashMap<>();
@@ -291,31 +338,37 @@ public class HelloController {
     }
 
 
-    public void Ulogin(ActionEvent event) throws IOException {
+    public void Ulogin(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         checklogin(event);
 
     }
 
-    private void checklogin(ActionEvent event) throws IOException {
+    private void checklogin(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
 
-        userdata = Files.readAllLines(path).toString();
-        userdata = userdata.replaceAll("\\[", "");
-        userdata = userdata.replaceAll("]", "");
-        System.out.println(userdata);
-        if (userdata.isEmpty()) {
-        } else {
-                userdata = userdata.replaceAll(", ","");
-            userdataList = userdata.split("_");
-            for (String nameL : userdataList) {
-                System.out.println(nameL);
-            }
-            for (int i = 0; i < userdataList.length; i += 5) {
-                hashMap.put(userdataList[i], new String[]{userdataList[i + 1], userdataList[i + 2], userdataList[i + 3], userdataList[i + 4]});
-            }
-        } if (username.getText().isEmpty() || password.getText().isEmpty()) {
+//        userdata = Files.readAllLines(path).toString();
+//        userdata = userdata.replaceAll("\\[", "");
+//        userdata = userdata.replaceAll("]", "");
+//        System.out.println(userdata);
+//        if (userdata.isEmpty()) {
+//        } else {
+//                userdata = userdata.replaceAll(", ","");
+//            userdataList = userdata.split("_");
+//            for (String nameL : userdataList) {
+//                System.out.println(nameL);
+//            }
+//            for (int i = 0; i < userdataList.length; i += 5) {
+//                hashMap.put(userdataList[i], new String[]{userdataList[i + 1], userdataList[i + 2], userdataList[i + 3], userdataList[i + 4]});
+//            }
+        String email = null, pass = null;
+        if(readData(username.getText()) != null){
+            email = readData(username.getText())[0];
+            pass = readData(username.getText())[1];
+        }
+
+         if (username.getText().isEmpty() || password.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Form Error!",
                     "Please enter the required fields");
-        }else if((hashMap.containsKey(username.getText())) && (password.getText().equals(hashMap.get(username.getText())[0]))){
+        }else if((username.getText().equals(email)) && password.getText().equals(pass)){
             infoBox("Login Successful!", null, "Success");
             switchToScene3(event);
         }else {
@@ -409,25 +462,29 @@ public class HelloController {
         switchToScene1(event);
     }
 
-    public void usignup(ActionEvent event) throws IOException {
-        userdata = Files.readAllLines(path).toString();
-        userdata = userdata.replaceAll("\\[", "");
-        userdata = userdata.replaceAll("]", "");
-        System.out.println(userdata);
-        if (userdata.isEmpty()) {
-        } else {
-//                userdata = userdata.replaceAll(", ","");
-            userdataList = userdata.split("_");
-//            for (String nameL : userdataList) {
-//                System.out.println(nameL);
+    public void usignup(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+//        userdata = Files.readAllLines(path).toString();
+//        userdata = userdata.replaceAll("\\[", "");
+//        userdata = userdata.replaceAll("]", "");
+//        System.out.println(userdata);
+//        if (userdata.isEmpty()) {
+//        } else {
+////                userdata = userdata.replaceAll(", ","");
+//            userdataList = userdata.split("_");
+////            for (String nameL : userdataList) {
+////                System.out.println(nameL);
+////            }
+//            for (int i = 0; i < userdataList.length; i += 5) {
+//                hashMap.put(userdataList[i], new String[]{userdataList[i + 1], userdataList[i + 2], userdataList[i + 3], userdataList[i + 4]});
 //            }
-            for (int i = 0; i < userdataList.length; i += 5) {
-                hashMap.put(userdataList[i], new String[]{userdataList[i + 1], userdataList[i + 2], userdataList[i + 3], userdataList[i + 4]});
-            }
-        }
-//        fwrite.write("\t" + email.getText() + "\t" + s_pass.getText().toString() + "\t" + s_username.getText().toString() + "\t" + number.getText().toString() + "\t" + confirmpass.getText().toString() + "\t" + myLabel1.getText().toString() + "\n");
+//        }
+////        fwrite.write("\t" + email.getText() + "\t" + s_pass.getText().toString() + "\t" + s_username.getText().toString() + "\t" + number.getText().toString() + "\t" + confirmpass.getText().toString() + "\t" + myLabel1.getText().toString() + "\n");
 //        fwrite.close();
 //        switchToScene1(event);
+        String mail = null;
+        if(readData(email.getText()) != null){
+            mail = readData(email.getText())[0];
+        }
 
         if (hashMap.containsKey(email.getText())) {
             showAlert(Alert.AlertType.ERROR, "Form Error!",
@@ -448,22 +505,24 @@ public class HelloController {
             showAlert(Alert.AlertType.ERROR, "Form Error!",
                     "Password and confirm Password are not same");
         } else {
-            hashMap.put(email.getText(), new String[]{s_pass.getText(), s_username.getText()});
+//            hashMap.put(email.getText(), new String[]{s_pass.getText(), s_username.getText()});
+            insertData(s_username.getText(), s_pass.getText(), myLabel1.getText(), email.getText(), number.getText());
             switchToScene1(event);
 //                root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
 //                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 //                scene = new Scene(root);
 //                stage.setScene(scene);
 //                stage.show();
-            fwrite.write(email.getText() + "_");
-            fwrite.write(s_pass.getText() + "_");
-            fwrite.write(s_username.getText() + "_");
-            fwrite.write(number.getText() + "_");
-            fwrite.write(myLabel1.getText() + "_");
-            fwrite.write("\n");
-            fwrite.close();
+//            fwrite.write(email.getText() + "_");
+//            fwrite.write(s_pass.getText() + "_");
+//            fwrite.write(s_username.getText() + "_");
+//            fwrite.write(number.getText() + "_");
+//            fwrite.write(myLabel1.getText() + "_");
+//            fwrite.write("\n");
+//            fwrite.close();
 
-            System.out.println(hashMap.get(email.getText()));
+
+//            System.out.println(hashMap.get(email.getText()));
         }
 
 

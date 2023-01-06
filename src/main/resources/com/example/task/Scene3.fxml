@@ -112,7 +112,7 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button layoutX="579.0" layoutY="34.0" mnemonicParsing="false" onAction="#catinfo" prefHeight="48.0" prefWidth="162.0" style="-fx-background-color: d5c1aa;" text="My Cat" textFill="WHITE">
+            <Button layoutX="579.0" layoutY="34.0" mnemonicParsing="false" onAction="#switchToScene11" prefHeight="48.0" prefWidth="162.0" style="-fx-background-color: d5c1aa;" text="Vaccination" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

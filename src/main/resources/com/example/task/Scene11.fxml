@@ -19,7 +19,7 @@
                         <Image url="@every.jpeg" />
                     </image>
                 </ImageView>
-            <Button layoutX="41.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToScene8" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-border-style: 0px 0px 2px;" text="Go Back" textFill="WHITE">
+            <Button layoutX="41.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToScene3" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-border-style: 0px 0px 2px;" text="Go Back" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
