@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: ofwhite;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task.HelloController">
+    <children>
+        <DatePicker fx:id="myDatePicker1" layoutX="642.0" layoutY="287.0" onAction="#getDate1" prefHeight="27.0" prefWidth="167.0" promptText="Enter your date of Birth" style="-fx-background-color: transparent; -fx-border-color: d5c1aa; border: 0px 0px 2px;" />
+        <Text fill="#d5c1aa" layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create an &#10;Account">
+            <font>
+                <Font name="Book Antiqua Bold" size="45.0" />
+            </font>
+        </Text>
+        <TextField fx:id="email" layoutX="477.0" layoutY="183.0" promptText="Email" style="-fx-background-color: Transparent; -fx-border-color: d5c1aa; -fx-border-width: 0px 0px 2px;" />
+        <PasswordField fx:id="s_pass" layoutX="478.0" layoutY="338.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: d5c1aa; -fx-border-width: 0px 0px 2px;" />
+        <Button fx:id="signup" layoutX="552.0" layoutY="468.0" mnemonicParsing="false" onAction="#usignup" prefHeight="45.0" prefWidth="137.0" style="-fx-background-color: D5C1AA;" text="Create an Account" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Hyperlink fx:id="signin" layoutX="600.0" layoutY="25.0" onAction="#alreadyacc" text="Already have an account? Sign In" textFill="#d5c1aa">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Hyperlink>
+        <Text fill="#d5c1aa" layoutX="9.0" layoutY="225.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="•Under one roof with best prices and availabilty of premium cats.&#10;•Making pet parenting easy with blogs on tips and tricks.&#10;•Vaccination and grooming facilities as we are committed to providing excellent service.&#10;•Cat care, up close and personal; become part of our loyal customer community&#10;•Care that goes beyond medical administation; neuter and diagnosis facilities available 24/7&#10;" textAlignment="JUSTIFY" wrappingWidth="306.228515625">
+            <font>
+                <Font name="Book Antiqua Bold" size="14.0" />
+            </font>
+        </Text>
+        <TextField fx:id="s_username" layoutX="477.0" layoutY="128.0" promptText="Username" style="-fx-background-color: Transparent; -fx-border-color: d5c1aa; -fx-border-width: 0px 0px 2px;" />
+        <TextField fx:id="number" layoutX="478.0" layoutY="236.0" promptText="Phone Number" style="-fx-background-color: Transparent; -fx-border-color: d5c1aa; -fx-border-width: 0px 0px 2px;" />
+        <PasswordField fx:id="confirmpass" layoutX="478.0" layoutY="394.0" promptText="Confirm Password" style="-fx-background-color: transparent; -fx-border-color: d5c1aa; -fx-border-width: 0px 0px 2px;" />
+        <Label fx:id="myLabel1" layoutX="478.0" layoutY="286.0" prefHeight="28.0" prefWidth="149.0" style="-fx-background-color: transparent; -fx-border-color: d5c1aa; -fx-border-width: 0px 0px 2px;" textFill="#d5c1aa" />
+    </children>
+</AnchorPane>
